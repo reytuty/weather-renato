@@ -33,7 +33,6 @@ export class NinjaWeatherSdk implements IWeatherApi {
         )
         .pipe(
           catchError((error: AxiosError) => {
-            console.log(error.response.data);
             throw error.response.data;
           }),
         ),

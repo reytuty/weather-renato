@@ -20,9 +20,7 @@ export class WeatherService {
 
     const cachedData: IWeatherResponseData | undefined =
       await this.cache.get(cacheKey);
-    console.log('cachedData:', cachedData);
     if (cachedData || cachedData === null) {
-      console.log('return from cache');
       return cachedData;
     }
     try {
@@ -54,7 +52,7 @@ export class WeatherService {
     return x;
   }
 
-  async getMedia(city: string): Promise<number> {
+  async getAverage(city: string): Promise<number> {
     const response: IWeatherResponseData | null = await this.getCity(city);
     if (!response) {
       throw new Error('City not found');
