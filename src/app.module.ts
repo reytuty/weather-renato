@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { WeatherModule } from './weather/weather.module';
 
 @Module({
-  imports: [],
+  imports: [WeatherModule],
   controllers: [AppController],
   providers: [AppService],
 })

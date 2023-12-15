@@ -1,4 +1,7 @@
-export class WeatherResponseData {
+export interface IWeatherApi {
+  getCity(city: string): Promise<IWeatherResponseData>;
+}
+export interface IWeatherResponseData {
   cloud_pct: number;
   temp: number;
   feels_like: number;
